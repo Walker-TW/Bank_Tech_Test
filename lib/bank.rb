@@ -28,7 +28,11 @@ class ATM
     puts firstline + (transactionlist.join("\n"))
   end
 
+
+  private
+
   def firstline
     "date || credit || debit || balance\n"
   end
+
 end
