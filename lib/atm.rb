@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'date'
-require 'client'
+require_relative 'client'
 
 class ATM
   def initialize(client = Client.new)
