@@ -4,8 +4,7 @@ require 'date'
 require 'client'
 
 class ATM
-
-  def initialize(log,balance)
+  def initialize(log, balance)
     @log = log
     @balance = balance
   end
@@ -27,4 +26,3 @@ class ATM
     "date || credit || debit || balance\n"
   end
 end
-

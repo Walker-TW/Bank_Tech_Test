@@ -5,18 +5,17 @@ require 'date'
 require 'timecop'
 
 describe ATM do
-
   describe '#print' do
     it 'Will return a statement printout after a deposit has been entered' do
       test = Client.new
-      subject = ATM.new(test.log,test.balance)
+      subject = ATM.new(test.log, test.balance)
       test.deposit(100)
       test.withdraw(50)
       expect { subject.print }.to output("date || credit || debit || balance\n#{Time.now.strftime('%d/%m/%Y')} || || 50.00 || 50.00\n#{Time.now.strftime('%d/%m/%Y')} || 100.00 || || 100.00\n").to_stdout
     end
     it 'Will return the required acceptance criteria' do
       test = Client.new
-      subject = ATM.new(test.log,test.balance)
+      subject = ATM.new(test.log, test.balance)
       Timecop.freeze(Time.local(2012, 1, 10))
       test.deposit(1000)
       Timecop.freeze(Time.local(2012, 1, 13))
@@ -30,7 +29,7 @@ describe ATM do
   describe '#transactionlist' do
     it 'Returns each element in the log array as a puts statement' do
       test = Client.new
-      subject = ATM.new(test.log,test.balance)
+      subject = ATM.new(test.log, test.balance)
       test.deposit(100)
       test.deposit(200)
       expect(subject.transactionlist).to eq(["#{Time.now.strftime('%d/%m/%Y')} || 200.00 || || 300.00", "#{Time.now.strftime('%d/%m/%Y')} || 100.00 || || 100.00"])

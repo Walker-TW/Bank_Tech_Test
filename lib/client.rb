@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Client
   attr_accessor :balance, :log
   def initialize
