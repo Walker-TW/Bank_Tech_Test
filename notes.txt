@@ -1,0 +1,29 @@
+What Did We Learn About the Output?
+
+- First line should always be "date || credit || debit || balance"
+- THEN
+- - Chronological listing of all transactions
+- - String interpolation going '#{date} + " || "+ #{credit} + " || "+ #{debit} + " || "+ {balance}'
+- - If a value it simply needs to be left blank
+THINGS TO NOTE
+- If there is nothing there the string interpolation needs to take a space (or we add them in in the return process)
+- Everything does not need to line up
+
+QUESTIONS FOR CLIENT
+- What happens if they go negative
+- - Not listed so just allow it
+- Would the print out be the end of the program?
+- - Did not answer so just let it continue
+
+QUESTIONS FOR KATERINA
+
+- Should I ever show leave these notes in the actual folder so that the tester can see them
+- - Yes and clearly labelled in the README.md
+- I understand I can ask clarifying questions but should i over burden them or just send them all at once
+- - Most of the information should be in what they send you so unless its vague look at it again
+- Should you ever build out extra features in a tech test if you have time
+- - No stick to the spec but it might be a good idea to go into the interviews with ideas
+- Does anyone put stock in how quickly something is finished (I imagine not)
+- - No they look at code quality over everything
+- Any good repository of a lot of these type of things
+- - Makers has a repo of these but not really (find your own)
