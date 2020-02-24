@@ -50,6 +50,8 @@ To get a local copy up and running follow these simple steps.
 
 A project that creates a client who can deposit and withdraw money. The client can then using the (ATM class) call a print out to STDOUT of their statements.
 
+The project has 100% test coverage.
+
 ### Installation
  
 1. Clone the repo
