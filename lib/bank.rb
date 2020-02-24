@@ -1,3 +1,5 @@
+require 'date'
+
 class ATM
   attr_reader :balance, :log
   def initialize
@@ -7,6 +9,7 @@ class ATM
 
   def deposit(amount)
     @balance += amount
+    @log << [Time.now.strftime("%d/%m/%Y"),"",amount,@balance]
   end
 
   def withdraw(amount)

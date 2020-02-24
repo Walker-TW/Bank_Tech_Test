@@ -1,4 +1,5 @@
 require 'bank.rb'
+require 'date'
 
 describe ATM do
   describe '#Init' do
@@ -16,6 +17,9 @@ describe ATM do
       subject.deposit(100)
       expect(subject.balance).to eq(100)
     end
+    it 'returns an array within an array with todays date and the current balance as well as how much was deposited'do
+      expect(subject.deposit(100)).to eq([[Time.now.strftime("%d/%m/%Y"),"",100,100]])
+    end
   end
 
   describe '#withdraw' do
@@ -30,5 +34,4 @@ describe ATM do
       expect(subject.firstline).to eq('date || credit || debit || balance')
     end
   end
-  
 end
