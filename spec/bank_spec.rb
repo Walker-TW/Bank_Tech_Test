@@ -33,6 +33,11 @@ describe ATM do
       subject.withdraw(100)
       expect(subject.log[0]).to eq([Time.now.strftime("%d/%m/%Y"),100,"",-100])
     end
+    it 'pushes another withdrawn amount into the array in reverse chronological order' do
+      subject.deposit(100)
+      subject.withdraw(300)
+      expect(subject.log[1]).to eq([Time.now.strftime("%d/%m/%Y"),300,"",-200])
+    end
   end
 
   describe '#firstline' do
