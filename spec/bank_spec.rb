@@ -31,7 +31,7 @@ describe ATM do
   describe '#withdraw' do
     it 'Allows the balance instance variable to be subtracted by the amount inputed (100)' do
       subject.withdraw(100)
-      expect(subject.balance).to eq(-100)
+      expect(subject.log[0]).to eq([Time.now.strftime("%d/%m/%Y"),100,"",-100])
     end
   end
 

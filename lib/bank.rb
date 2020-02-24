@@ -14,6 +14,7 @@ class ATM
 
   def withdraw(amount)
     @balance -= amount
+    @log << [Time.now.strftime("%d/%m/%Y"),amount,"",@balance]
   end
 
   def firstline
