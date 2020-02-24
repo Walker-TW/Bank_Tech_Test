@@ -46,6 +46,9 @@ To get a local copy up and running follow these simple steps.
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+<img src="images/AppRunning.png">
+
+
 A project that creates a client who can deposit and withdraw money. The client can then using the (ATM class) call a print out to STDOUT of their statements.
 
 The project has 100% test coverage.
