@@ -38,3 +38,7 @@ class ATM
     "date || credit || debit || balance\n"
   end
 end
+
+class Client
+
+end

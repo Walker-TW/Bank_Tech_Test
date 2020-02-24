@@ -68,3 +68,6 @@ describe ATM do
     end
   end
 end
+
+describe Client do
+end
