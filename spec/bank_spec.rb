@@ -46,10 +46,11 @@ describe ATM do
     end
   end
 
-  xdescribe '#print' do
+  describe '#print' do
     it 'Will return a statement printout after a deposit has been entered' do
       subject.deposit(100)
-      expect(subject.print).to eq("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")},300,"",-200")
+      subject.withdraw(50)
+      expect{subject.print}.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} ||  || 100 || 100\n#{Time.now.strftime("%d/%m/%Y")} || 50 ||  || 50\n").to_stdout
     end
   end
 

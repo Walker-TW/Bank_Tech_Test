@@ -23,10 +23,9 @@ class ATM
     end
   end
 
-  # def print
-  #   firstline
-  #   transactionlist
-  # end
+  def print
+    puts firstline + transactionlist.join("\n")
+  end
 
   def firstline
     "date || credit || debit || balance\n"
