@@ -20,5 +20,11 @@ describe ATM do
       expect(subject.balance).to eq(-100)
     end
   end
+
+  describe '#firstline' do
+    it 'Will return a premade string that will go at the top of the balance printout' do
+      expect(subject.firstline).to eq('date || credit || debit || balance')
+    end
+  end
   
 end

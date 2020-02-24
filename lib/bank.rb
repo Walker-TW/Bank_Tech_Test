@@ -12,4 +12,8 @@ class ATM
   def withdraw(amount)
     @balance -= amount
   end
+
+  def firstline
+    'date || credit || debit || balance'
+  end
 end

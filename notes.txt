@@ -9,6 +9,7 @@ Things 2 Do
 - Print
 - Refactor
 - - Break apart methods more
+- CHECK FOR EDGE CASES
 
 What Did We Learn About the Output?
 
