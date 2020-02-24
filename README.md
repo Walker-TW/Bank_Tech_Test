@@ -82,6 +82,9 @@ irb : 004 > x.withdraw(300)
 Finally you can print out the statement by;
 ```sh
 irb : 005 > x.print
+To run tests please..
+```sh
+rspec
 ```
 ## License
 
