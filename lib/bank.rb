@@ -17,7 +17,18 @@ class ATM
     @log << [Time.now.strftime("%d/%m/%Y"),amount,"",@balance]
   end
 
+  def transactionlist
+    @log.map do |transaction| 
+      transaction.map {|x| x.to_s}.join(" || ")
+    end
+  end
+
+  # def print
+  #   firstline
+  #   transactionlist
+  # end
+
   def firstline
-    'date || credit || debit || balance'
+    "date || credit || debit || balance\n"
   end
 end

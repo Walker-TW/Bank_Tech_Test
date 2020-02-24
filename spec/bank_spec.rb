@@ -42,7 +42,22 @@ describe ATM do
 
   describe '#firstline' do
     it 'Will return a premade string that will go at the top of the balance printout' do
-      expect(subject.firstline).to eq('date || credit || debit || balance')
+      expect(subject.firstline).to eq("date || credit || debit || balance\n")
+    end
+  end
+
+  xdescribe '#print' do
+    it 'Will return a statement printout after a deposit has been entered' do
+      subject.deposit(100)
+      expect(subject.print).to eq("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")},300,"",-200")
+    end
+  end
+
+  describe '#transactionlist' do
+    it 'Returns each element in the log array as a puts statement' do
+      subject.deposit(100)
+      subject.deposit(200)
+      expect(subject.transactionlist).to eq(["#{Time.now.strftime("%d/%m/%Y")} ||  || 100 || 100", "#{Time.now.strftime("%d/%m/%Y")} ||  || 200 || 300"])
     end
   end
 end
