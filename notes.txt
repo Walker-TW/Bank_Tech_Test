@@ -1,3 +1,14 @@
+Things 2 Do
+- First repo init
+- - Set up rspec
+- Class
+- Balance constant
+- Deposit
+- Withdraw
+- Interpolation
+- Print
+
+
 What Did We Learn About the Output?
 
 - First line should always be "date || credit || debit || balance"
@@ -5,6 +16,7 @@ What Did We Learn About the Output?
 - - Chronological listing of all transactions
 - - String interpolation going '#{date} + " || "+ #{credit} + " || "+ #{debit} + " || "+ {balance}'
 - - If a value it simply needs to be left blank
+
 THINGS TO NOTE
 - If there is nothing there the string interpolation needs to take a space (or we add them in in the return process)
 - Everything does not need to line up
@@ -16,7 +28,6 @@ QUESTIONS FOR CLIENT
 - - Did not answer so just let it continue
 
 QUESTIONS FOR KATERINA
-
 - Should I ever show leave these notes in the actual folder so that the tester can see them
 - - Yes and clearly labelled in the README.md
 - I understand I can ask clarifying questions but should i over burden them or just send them all at once
