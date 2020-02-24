@@ -1,8 +1,8 @@
 Things 2 Do
-- First repo init
+- First repo init X
 - - Set up rspec
-- Class
-- Balance constant
+- Class X
+- Balance constant X
 - Deposit
 - Withdraw
 - Interpolation

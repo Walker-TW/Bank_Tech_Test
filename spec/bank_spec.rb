@@ -6,4 +6,11 @@ describe ATM do
       expect(subject.balance).to eq(0)
     end
   end
+
+  describe '#deposit' do
+    it 'Allows the balance instance varaible to be changed by the amount inputed (100)' do
+      subject.deposit(100)
+      expect(subject.balance).to eq(100)
+    end
+  end
 end
