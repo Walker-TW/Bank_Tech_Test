@@ -4,9 +4,9 @@ require 'date'
 require 'client'
 
 class ATM
-  def initialize(log, balance)
-    @log = log
-    @balance = balance
+  def initialize(client = Client.new)
+    @log = client.log
+    @balance = client.balance
   end
 
   def transactionlist
