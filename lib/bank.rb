@@ -3,22 +3,10 @@
 require 'date'
 
 class ATM
-  attr_reader :balance, :log
-  def initialize
-    @balance = 0
-    @log = []
-  end
 
-  def deposit(amount)
-    @balance += amount
-    @log << [Time.now.strftime('%d/%m/%Y'), amount.to_s + '.00', '',
-             @balance.to_s + '.00']
-  end
-
-  def withdraw(amount)
-    @balance -= amount
-    @log << [Time.now.strftime('%d/%m/%Y'), '', amount.to_s + '.00',
-             balance.to_s + '.00']
+  def initialize(log,balance)
+    @log = log
+    @balance = balance
   end
 
   def transactionlist
@@ -40,9 +28,21 @@ class ATM
 end
 
 class Client
-  attr_reader :balance, :log
+  attr_accessor :balance, :log
   def initialize
     @balance = 0
     @log = []
+  end
+
+  def deposit(amount)
+    @balance += amount
+    @log << [Time.now.strftime('%d/%m/%Y'), amount.to_s + '.00', '',
+             @balance.to_s + '.00']
+  end
+
+  def withdraw(amount)
+    @balance -= amount
+    @log << [Time.now.strftime('%d/%m/%Y'), '', amount.to_s + '.00',
+             balance.to_s + '.00']
   end
 end
