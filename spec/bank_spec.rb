@@ -70,4 +70,13 @@ describe ATM do
 end
 
 describe Client do
+  describe '#Init' do
+    it 'Returns a balance value at 0 when initalized' do
+      expect(subject.balance).to eq(0)
+    end
+    it 'On creation returns an array' do
+      lloyds = ATM.new
+      expect(lloyds.log[0]).to be(nil)
+    end
+  end
 end

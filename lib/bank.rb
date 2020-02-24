@@ -40,5 +40,9 @@ class ATM
 end
 
 class Client
-
+  attr_reader :balance, :log
+  def initialize
+    @balance = 0
+    @log = []
+  end
 end
