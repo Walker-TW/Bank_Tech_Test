@@ -9,17 +9,18 @@ class ATM
 
   def deposit(amount)
     @balance += amount
-    @log << [Time.now.strftime("%d/%m/%Y"),"",amount,@balance]
+    @log << [Time.now.strftime("%d/%m/%Y"),amount.to_s + ".00","",@balance.to_s + ".00"]
   end
 
   def withdraw(amount)
     @balance -= amount
-    @log << [Time.now.strftime("%d/%m/%Y"),amount,"",@balance]
+    @log << [Time.now.strftime("%d/%m/%Y"),"",amount.to_s + ".00",balance.to_s + ".00"]
   end
 
   def transactionlist
     @log.reverse.map do |transaction| 
-      transaction.map {|x| x.to_s}.join(" || ")
+      x = transaction.map {|x| x.to_s}.join(" || ")
+      x.gsub("  ", " ")
     end
   end
 

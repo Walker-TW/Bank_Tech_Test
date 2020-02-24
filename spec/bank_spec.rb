@@ -20,24 +20,24 @@ describe ATM do
     end
     it 'returns an array within an array with todays date and the current balance as well as how much was deposited'do
       subject.deposit(100)
-      expect(subject.log[0]).to eq([Time.now.strftime("%d/%m/%Y"),"",100,100])
+      expect(subject.log[0]).to eq([Time.now.strftime("%d/%m/%Y"),"100.00","","100.00"])
     end
     it 'pushes another deposit into the array in reverse chronological order' do
       subject.deposit(100)
       subject.deposit(300)
-      expect(subject.log[1]).to eq([Time.now.strftime("%d/%m/%Y"),"",300,400])
+      expect(subject.log[1]).to eq([Time.now.strftime("%d/%m/%Y"),"300.00","","400.00"])
     end
   end
 
   describe '#withdraw' do
     it 'Allows the balance instance variable to be subtracted by the amount inputed (100)' do
       subject.withdraw(100)
-      expect(subject.log[0]).to eq([Time.now.strftime("%d/%m/%Y"),100,"",-100])
+      expect(subject.log[0]).to eq([Time.now.strftime("%d/%m/%Y"),"","100.00","-100.00"])
     end
     it 'pushes another withdrawn amount into the array in reverse chronological order' do
       subject.deposit(100)
       subject.withdraw(300)
-      expect(subject.log[1]).to eq([Time.now.strftime("%d/%m/%Y"),300,"",-200])
+      expect(subject.log[1]).to eq([Time.now.strftime("%d/%m/%Y"),"","300.00","-200.00"])
     end
   end
 
@@ -51,7 +51,7 @@ describe ATM do
     it 'Will return a statement printout after a deposit has been entered' do
       subject.deposit(100)
       subject.withdraw(50)
-      expect{subject.print}.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} ||  || 50 || 50\n#{Time.now.strftime("%d/%m/%Y")} || 100 ||  || 100\n").to_stdout
+      expect{subject.print}.to output("date || credit || debit || balance\n#{Time.now.strftime("%d/%m/%Y")} || || 50.00 || 50.00\n#{Time.now.strftime("%d/%m/%Y")} || 100.00 || || 100.00\n").to_stdout
     end
     it 'Will return the required acceptance criteria' do
       Timecop.freeze(Time.local(2012,1,10))
@@ -60,10 +60,7 @@ describe ATM do
       subject.deposit(2000)
       Timecop.freeze(Time.local(2012,1,14))
       subject.withdraw(500)
-      expect{subject.print}.to output("date || credit || debit || balance
-        14/01/2012 || || 500.00 || 2500.00
-        13/01/2012 || 2000.00 || || 3000.00
-        10/01/2012 || 1000.00 || || 1000.00").to_stdout
+      expect{subject.print}.to output("date || credit || debit || balance\n14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 || || 3000.00\n10/01/2012 || 1000.00 || || 1000.00\n").to_stdout
     end
   end
 
@@ -71,7 +68,7 @@ describe ATM do
     it 'Returns each element in the log array as a puts statement' do
       subject.deposit(100)
       subject.deposit(200)
-      expect(subject.transactionlist).to eq(["#{Time.now.strftime("%d/%m/%Y")} ||  || 200 || 300", "#{Time.now.strftime("%d/%m/%Y")} ||  || 100 || 100"])
+      expect(subject.transactionlist).to eq(["#{Time.now.strftime("%d/%m/%Y")} || 200.00 || || 300.00", "#{Time.now.strftime("%d/%m/%Y")} || 100.00 || || 100.00"])
     end
   end
 end
