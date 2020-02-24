@@ -31,7 +31,8 @@ describe ATM do
       subject = ATM.new(test)
       test.deposit(100)
       test.deposit(200)
-      expect(subject.transactionlist).to eq(["#{Time.now.strftime('%d/%m/%Y')} || 200.00 || || 300.00", "#{Time.now.strftime('%d/%m/%Y')} || 100.00 || || 100.00"])
+      expect(subject.transactionlist).to eq(["#{Time.now.strftime('%d/%m/%Y')} || 200.00 || || 300.00",
+                                             "#{Time.now.strftime('%d/%m/%Y')} || 100.00 || || 100.00"])
     end
   end
 end
