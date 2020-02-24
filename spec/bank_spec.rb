@@ -18,7 +18,8 @@ describe ATM do
       expect(subject.balance).to eq(100)
     end
     it 'returns an array within an array with todays date and the current balance as well as how much was deposited'do
-      expect(subject.deposit(100)).to eq([[Time.now.strftime("%d/%m/%Y"),"",100,100]])
+      subject.deposit(100)
+      expect(subject.log[0]).to eq([Time.now.strftime("%d/%m/%Y"),"",100,100])
     end
   end
 
