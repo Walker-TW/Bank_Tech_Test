@@ -4,23 +4,19 @@ require 'date'
 require_relative 'account'
 
 class Printer
-  def initialize(account = Account.new)
-    @log = account.log
-    @balance = account.balance
+
+  def printstatement(log)
+    print firstline + transactionlist(log).join("\n")
   end
 
-  def transactionlist
-    @log.reverse.map do |transaction|
+  private
+
+  def transactionlist(log)
+    log.reverse.map do |transaction|
       x = transaction.map(&:to_s).join(' || ')
       x.gsub('  ', ' ')
     end
   end
-
-  def printstatement
-    print firstline + transactionlist.join("\n")
-  end
-
-  private
 
   def firstline
     "date || credit || debit || balance\n"
