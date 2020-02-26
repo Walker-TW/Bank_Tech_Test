@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Client
+class Account
   attr_accessor :balance, :log
   def initialize
     @balance = 0

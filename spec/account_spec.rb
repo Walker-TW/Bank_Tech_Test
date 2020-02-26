@@ -1,14 +1,15 @@
 # frozen_string_literal: true
 
 require 'date.rb'
+require 'account'
 
-describe Client do
+describe Account do
   describe '#Init' do
     it 'Returns a balance value at 0 when initalized' do
       expect(subject.balance).to eq(0)
     end
     it 'On creation returns an array' do
-      test = Client.new
+      test = Account.new
       expect(test.log[0]).to be(nil)
     end
   end

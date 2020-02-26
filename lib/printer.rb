@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 require 'date'
-require_relative 'client'
+require_relative 'account'
 
-class ATM
-  def initialize(client = Client.new)
-    @log = client.log
-    @balance = client.balance
+class Printer
+  def initialize(account = Account.new)
+    @log = account.log
+    @balance = account.balance
   end
 
   def transactionlist
@@ -16,8 +16,8 @@ class ATM
     end
   end
 
-  def print
-    puts firstline + transactionlist.join("\n")
+  def printstatement
+    print firstline + transactionlist.join("\n")
   end
 
   private
